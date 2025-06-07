@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+.skip-size-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.skip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skip-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 280px;
+  transition: transform 0.2s;
+}
+
+.skip-card:hover {
+  transform: translateY(-5px);
+}
+
+.skip-card h2 {
+  margin-top: 0;
+  color: #34495e;
+}
+
+.skip-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.green {
+  background-color: #27ae60;
+}
+
+.red {
+  background-color: #c0392b;
+}
+
+.select-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.select-button:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 600px) {
+  .skip-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skip-card {
+    width: 90%;
+  }
+}
+
+.loading {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 18px;
+  color: #7f8c8d;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.green-tick {
+  color: green;
+  font-weight: bold;
+}
+
+.red-cross {
+  color: red;
+  font-weight: bold;
+}
+.filter-bar input[type="range"] {
+  width: 200px;
+  margin-right: 10px;
+}
+.filter-bar span {
+  font-weight: bold;
+}
+
+.no-skips {
+  font-size: 1.2rem;
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
