@@ -45,9 +45,6 @@ Heavy waste acceptance
 ✅ Fully responsive and accessible with alt text and ARIA labels
 
 🗂️ Project Structure
-bash
-Copy
-Edit
 src/
 │
 ├── components/
@@ -59,26 +56,19 @@ src/
 │
 ├── styles.css                 # Styling for the app
 │
-└── App.js                     # Main app entry (not shown here)
+└── App.js                     # Main app entry
 🛠️ Installation & Running Locally
 Clone the repository:
 
-bash
-Copy
-Edit
+
 git clone https://github.com/yourusername/skip-selector-app.git
 cd skip-selector-app
+
 Install dependencies:
 
-bash
-Copy
-Edit
 npm install
 Start the development server:
 
-bash
-Copy
-Edit
 npm start
 Open http://localhost:3000 in your browser.
 
@@ -126,9 +116,6 @@ Standalone skip selector (for reuse in other contexts if needed)
 🌐 API
 Fetch skips from:
 
-ruby
-Copy
-Edit
 https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft
 The skip object includes:
 
