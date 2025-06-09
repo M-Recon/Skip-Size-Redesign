@@ -1,70 +1,163 @@
-# Getting Started with Create React App
+Skip Size Selector App
+This React app allows users to view and select different skip sizes for hire, applying filters like price, size, and features such as "allowed on road" or "allows heavy waste." Users can see skip details and proceed through a step-by-step booking process.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+📦 Features
+✅ Filter skips by:
 
-## Available Scripts
+Price range
 
-In the project directory, you can run:
+Skip size
 
-### `npm start`
+Allowed on road
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Allows heavy waste
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+✅ View skip details, including:
 
-### `npm test`
+Price before VAT
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+VAT amount
 
-### `npm run build`
+Total price
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Hire period
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Road allowance
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Heavy waste acceptance
 
-### `npm run eject`
+✅ Interactive step-by-step progress bar (7 steps):
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+📍 Postcode
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🏠 Address
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🗑️ Waste Type
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🚛 Select Skip
 
-## Learn More
+📝 Permit Check
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+📅 Choose Date
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+💳 Payment
 
-### Code Splitting
+✅ Fully responsive and accessible with alt text and ARIA labels
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🗂️ Project Structure
+bash
+Copy
+Edit
+src/
+│
+├── components/
+│   ├── SkipSizePage.js        # Main skip size selection page
+│   ├── SkipCard.js            # Card component showing skip details
+│   ├── SkipDetailsModal.js    # Modal for viewing skip details
+│   ├── SkipSelector.js        # Optional skip selector component
+│   └── FilterBar.js           # Component for applying filters
+│
+├── styles.css                 # Styling for the app
+│
+└── App.js                     # Main app entry (not shown here)
+🛠️ Installation & Running Locally
+Clone the repository:
 
-### Analyzing the Bundle Size
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/skip-selector-app.git
+cd skip-selector-app
+Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+bash
+Copy
+Edit
+npm install
+Start the development server:
 
-### Making a Progressive Web App
+bash
+Copy
+Edit
+npm start
+Open http://localhost:3000 in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🔍 Components Overview
+SkipSizePage.js
+Manages skip data fetching and filtering
 
-### Advanced Configuration
+Renders:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Progress bar with steps
 
-### Deployment
+FilterBar for filtering skips
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+SkipCard list
 
-### `npm run build` fails to minify
+SkipDetailsModal when a skip is selected
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+SkipCard.js
+Displays a skip’s:
+
+Size
+
+Image
+
+Hire period
+
+Price (with VAT)
+
+Features (allowed on road, heavy waste)
+
+SkipDetailsModal.js
+Displays detailed skip information in a modal:
+
+Price breakdown
+
+Features
+
+Disclaimer
+
+Proceed button
+
+SkipSelector.js
+Standalone skip selector (for reuse in other contexts if needed)
+
+🌐 API
+Fetch skips from:
+
+ruby
+Copy
+Edit
+https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft
+The skip object includes:
+
+id, size, price_before_vat, vat, hire_period_days, allowed_on_road, allows_heavy_waste
+
+🖼️ Skip Images
+Skip images are mapped based on their size using:
+
+js
+Copy
+Edit
+skipSizeToImageMap = {
+  '4': 'https://.../4-yarder-skip.jpg',
+  '6': 'https://.../6-yarder-skip.jpg',
+  ...
+}
+💻 Styling
+All CSS is imported from styles.css
+
+Includes:
+
+.skip-card
+
+.modal-overlay, .modal-content
+
+.topbar-progress (stepper)
+
+.btn, .cancel, .continue
+
+.green-tick, .red-cross
+
+.tag
