@@ -15,15 +15,14 @@ const FilterBar = ({
 }) => {
   return (
     <div className="filter-bar">
-      <div>
-        <label>Price Range (£): </label>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          
-          <span style={{ margin: '0 8px' }}>Min: £{minPrice}</span>
+      <div className="filter-group">
+        <label>Price Range (£):</label>
+        <div className="price-range">
+          <span>Min: £{minPrice}</span>
           <input
             type="range"
             min="50"
-            max="1000"
+            max="1200"
             step="10"
             value={maxPrice}
             onChange={(e) => setMaxPrice(e.target.value)}
@@ -31,8 +30,9 @@ const FilterBar = ({
           <span>Max: £{maxPrice}</span>
         </div>
       </div>
-      <div>
-        <label>Skip Size (Yards): </label>
+
+      <div className="filter-group">
+        <label>Skip Size (Yards):</label>
         <input
           type="number"
           value={size}
@@ -40,16 +40,18 @@ const FilterBar = ({
           placeholder="e.g. 8"
         />
       </div>
-      <div>
-        <label>Allowed On Road: </label>
+
+      <div className="filter-group">
+        <label>Allowed On Road:</label>
         <select value={allowedOnRoad} onChange={(e) => setAllowedOnRoad(e.target.value)}>
           <option value="">All</option>
           <option value="true">Yes</option>
           <option value="false">No</option>
         </select>
       </div>
-      <div>
-        <label>Allows Heavy Waste: </label>
+
+      <div className="filter-group">
+        <label>Allows Heavy Waste:</label>
         <select value={allowsHeavyWaste} onChange={(e) => setAllowsHeavyWaste(e.target.value)}>
           <option value="">All</option>
           <option value="true">Yes</option>

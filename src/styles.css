@@ -5,18 +5,29 @@ body {
   background: #f4f4f4;
 }
 
+/* Page Container */
 .skip-size-page {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
 }
 
-.title {
+/* Page Title */
+.title,
+.page-title {
   text-align: center;
   color: #2c3e50;
   margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
+/* Skip List */
 .skip-list {
   display: flex;
   flex-wrap: wrap;
@@ -47,6 +58,7 @@ body {
   font-size: 14px;
 }
 
+/* Tags */
 .tag {
   display: inline-block;
   padding: 4px 8px;
@@ -54,15 +66,10 @@ body {
   font-size: 12px;
   color: #fff;
 }
+.green { background-color: #27ae60; }
+.red { background-color: #c0392b; }
 
-.green {
-  background-color: #27ae60;
-}
-
-.red {
-  background-color: #c0392b;
-}
-
+/* Select Button */
 .select-button {
   background-color: #3498db;
   color: white;
@@ -74,22 +81,22 @@ body {
   width: 100%;
   font-size: 16px;
 }
-
 .select-button:hover {
   background-color: #2980b9;
 }
 
+/* Responsive */
 @media (max-width: 600px) {
   .skip-list {
     flex-direction: column;
     align-items: center;
   }
-
   .skip-card {
     width: 90%;
   }
 }
 
+/* Loading */
 .loading {
   text-align: center;
   margin-top: 50px;
@@ -97,11 +104,10 @@ body {
   color: #7f8c8d;
 }
 
-
+/* Modal */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.5);
@@ -115,7 +121,7 @@ body {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  max-width: 400px;
+  max-width: 500px;
   width: 90%;
   position: relative;
 }
@@ -130,6 +136,223 @@ body {
   cursor: pointer;
 }
 
+/* Modal Buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.btn-continue {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-cancel {
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Progress Steps */
+.topbar-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.step-item {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.step-item.active {
+  background-color: orange;
+  color: white;
+}
+
+.step-item.completed {
+  background-color: #4caf50;
+  color: white;
+}
+
+.step-item:hover {
+  opacity: 0.8;
+}
+
+/* FilterBar */
+.filter-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #333;
+}
+
+.filter-group input[type="number"],
+.filter-group select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: border-color 0.3s;
+}
+
+.filter-group input[type="number"]:focus,
+.filter-group select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.price-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-range input[type="range"] {
+  width: 120px;
+  accent-color: #007bff;
+}
+
+.price-range span {
+  font-weight: bold;
+  color: #333;
+}
+
+.no-skips {
+  font-size: 1.2rem;
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.green-tick {
+  color: green;
+  font-weight: bold;
+}
+.red-cross {
+  color: red;
+  font-weight: bold;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 24px 32px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+.close-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.modal-disclaimer {
+  background-color: #fff8e1;
+  color: #8a6d3b;
+  padding: 12px 16px;
+  border: 1px solid #f1e1a6;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin: 20px 0;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 24px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn.cancel {
+  background-color: #ddd;
+  color: #333;
+}
+
+.btn.cancel:hover {
+  background-color: #ccc;
+}
+
+.btn.continue {
+  background-color: orange;
+  color: white;
+}
+
+.btn.continue:hover {
+  background-color: darkorange;
+}
+
 .green-tick {
   color: green;
   font-weight: bold;
@@ -139,18 +362,70 @@ body {
   color: red;
   font-weight: bold;
 }
-.filter-bar input[type="range"] {
-  width: 200px;
-  margin-right: 10px;
-}
-.filter-bar span {
-  font-weight: bold;
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #333;
 }
 
-.no-skips {
-  font-size: 1.2rem;
-  color: red;
+.modal-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.modal-row strong {
+  font-weight: 600;
+}
+
+.modal-title-centered {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modal-buttons-center {
+  justify-content: center;
+  gap: 16px; 
+}
+
+.modal-disclaimer {
+  background-color: #fff8e1;
+  color: #8a6d3b;
+  padding: 12px 16px;
+  border: 1px solid #f1e1a6;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  text-align: center;
+  gap: 8px;  
+  flex-direction: row;
+}
+
+.disclaimer-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+  user-select: none;
+}
+
+.disclaimer-text {
+  max-width: 380px;  
+}
+.disclaimer-text p {
+  margin: 6px 0 0;
+}
+
+.skip-features {
+  display: flex;
+  gap: 12px; 
+  flex-wrap: wrap;  
+  margin: 8px 0;
 }
 
