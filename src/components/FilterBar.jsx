@@ -35,6 +35,7 @@ const FilterBar = ({
         <label>Skip Size (Yards):</label>
         <input
           type="number"
+		  min="1"
           value={size}
           onChange={(e) => setSize(e.target.value)}
           placeholder="e.g. 8"
